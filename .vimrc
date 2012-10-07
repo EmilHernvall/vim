@@ -138,7 +138,8 @@ if has("gui_running")
     if has("win32")
         set guifont=Consolas:h10:b:cANSI
     else
-        set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
+        "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
+        set guifont=Menlo\ for\ Powerline\ 9
     endif
     set guioptions-=T
     colorscheme desert
@@ -146,6 +147,8 @@ else
     colorscheme evening
 endif
 
-noremap <F5> :silent !./build.sh<CR>
+noremap <F5> :exec "silent !./build.sh " . v:servername<CR>
+
+let g:Powerline_symbols = 'fancy'
 
 call pathogen#infect()
