@@ -1,0 +1,20 @@
+snippet AsyncCallback
+	    new AsyncCallback<${1:object}>() {
+	        public void onFailure(Throwable caught) {
+	            try {
+	                throw caught;
+	            } catch (Throwable e) {
+	                handleErrors(e);
+	            }
+	        }
+	        public void onSuccess($1 ${2}) {
+	            ${3}
+	        }
+	    }
+
+snippet mvar
+	private ${1} ${2}${3: = null};
+
+snippet getset
+	public void set$1($2 v) { this.$3 = v; }
+	public ${2:int} get${1:Id}() { return ${3:id}; }

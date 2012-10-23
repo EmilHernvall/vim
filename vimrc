@@ -78,31 +78,22 @@ noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
 
-" remap go to mark to work with swedish keyboard
-noremap ' `
-noremap ` '
-
 " remap go to tag to work with swedish keyboard
 noremap <C-G> <C-]>
 
 " adaptations for swedish keyboard layout
-nnoremap Ä }
-nnoremap Ö {
 nnoremap ä ]
 nnoremap ö [
-vnoremap Ä }
-vnoremap Ö {
 vnoremap ä ]
 vnoremap ö [
+nnoremap <silent> Ö :keepjumps normal {<cr>
+nnoremap <silent> Ä :keepjumps normal }<cr>
+vnoremap <silent> Ö {
+vnoremap <silent> Ä }
 
 " disable some stuff
 nnoremap K <nop>
 vnoremap K <nop>
-" disable {} for jumping paragaphs since i should use ÖÄ
-nnoremap { <nop>
-vnoremap { <nop>
-nnoremap } <nop>
-vnoremap } <nop>
 
 " quick quitting
 command Q qall!
@@ -153,10 +144,6 @@ if has("gui_running")
 else
     colorscheme evening
 endif
-
-" docs
-set tags+=/home/emil/docs/gwt/tags
-set tags+=/home/emil/docs/java/tags
 
 " function keys
 " =============
