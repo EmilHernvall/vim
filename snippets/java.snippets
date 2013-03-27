@@ -18,3 +18,55 @@ snippet mvar
 snippet getset
 	public void set$1($2 v) { this.$3 = v; }
 	public ${2:int} get${1:Id}() { return ${3:id}; }
+
+snippet enum
+	public enum ${1:MyEnum}
+	{
+	    ${2};
+	
+	    public static $1 fromString(String t)
+	    {
+	        for ($1 v : $1.values()) {
+	            if (t.equalsIgnoreCase(v.toString())) {
+	                return v;
+	            }
+	        }
+	        return null;
+	    }
+	}
+
+snippet stmt
+	PreparedStatement stmt = null;
+	try {
+	    String sql = "";
+	
+	    stmt = conn.prepareStatement(sql);
+	    stmt.setInt(1, id);
+	    stmt.execute();
+	}
+	finally {
+	    if (stmt != null) {
+	        try { stmt.close(); } catch (SQLException e) {}
+	    }
+	}
+
+snippet stmtrs
+	PreparedStatement stmt = null;
+	ResultSet rs = null;
+	try {
+	    String sql = "";
+	
+	    stmt = conn.prepareStatement(sql);
+	    stmt.setInt(1, id);
+	    stmt.execute();
+	
+	    rs = stmt.getResultSet();
+	}
+	finally {
+	    if (rs != null) {
+	        try { rs.close(); } catch (SQLException e) {}
+	    }
+	    if (stmt != null) {
+	        try { stmt.close(); } catch (SQLException e) {}
+	    }
+	}

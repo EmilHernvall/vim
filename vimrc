@@ -2,6 +2,8 @@ set nocompatible
 
 syntax on
 
+set ttyfast
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -52,12 +54,16 @@ let g:netrw_list_hide = "\\~$,\\.swp$"
 let java_allow_cpp_keywords=1
 
 " shortcuts for deleting and changing without putting in register
-nmap <silent> <Leader>d "_d
-nmap <silent> <Leader>c "_c
+" nmap <silent> <Leader>d "_d
+" nmap <silent> <Leader>c "_c
 
-" replace with register
-nmap <silent> <Leader>pw "_dwP
-nmap <silent> <Leader>pe "_deP
+" for navigating between errors
+map <Leader>q :copen<cr><C-W>J
+noremap <silent> <leader>w :w \| exec "silent !./build.sh " . v:servername<CR>
+map <Leader>e :ccl<cr>
+map <Leader>a :cf<cr>
+map <leader>s :cp<cr>
+map <leader>d :cn<cr>
 
 " shortcut to cleanout whitespace
 nnoremap <Leader>wh :exec "%s/ \\+$// <bar> nohl"<CR>
@@ -81,11 +87,11 @@ noremap <Right> <nop>
 " remap go to tag to work with swedish keyboard
 noremap <C-G> <C-]>
 
-" adaptations for swedish keyboard layout
-nnoremap ä ]
-nnoremap ö [
-vnoremap ä ]
-vnoremap ö [
+" quick navigation keys
+" nnoremap <silent> ö :set nohlsearch<cr>?\v(\{\|\})<Cr>:let @/=""<cr>:set hlsearch<cr>
+" nnoremap <silent> ä :set nohlsearch<cr>/\v(\{\|\})<Cr>:let @/=""<cr>:set hlsearch<cr>
+nnoremap <silent> ö :set nohlsearch<cr>:let @/='\v(\{\|\})'<Cr>:keepjumps normal N<Cr>:let @/=""<cr>:set hlsearch<cr>
+nnoremap <silent> ä :set nohlsearch<cr>:let @/='\v(\{\|\})'<Cr>:keepjumps normal n<Cr>:let @/=""<cr>:set hlsearch<cr>
 nnoremap <silent> Ö :keepjumps normal {<cr>
 nnoremap <silent> Ä :keepjumps normal }<cr>
 vnoremap <silent> Ö {
