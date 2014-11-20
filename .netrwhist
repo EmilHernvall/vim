@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/emil/projects/znaptag/cazanova/src/main/java/com/znaptag/cazanova'
+let g:netrw_dirhist_2='/home/emil/projects/znaptag/cazanova/src/main/java/com/znaptag'
+let g:netrw_dirhist_3='/home/emil/projects/znaptag/cazanova/src/main/java/com/znaptag/cazanova'
+let g:netrw_dirhist_4='/home/emil/projects/znaptag/cazanova/src/main/java/com/znaptag/cazanova/web'
+let g:netrw_dirhist_5='/home/emil/projects/znaptag/srv/src/main/java/com/znaptag/srv/servlet/util'

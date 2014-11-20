@@ -169,5 +169,13 @@ set pastetoggle=<F11>
 let g:Powerline_symbols = 'fancy'
 
 nnoremap <silent> <Leader>P :YRShow<CR>
+nnoremap <silent> <space> :CtrlPBuffer<CR>
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(build|git|hg|svn)$',
+    \ 'file': '\v\.(class|pyc|exe|so|dll)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
 
 call pathogen#infect()
