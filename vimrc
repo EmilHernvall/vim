@@ -39,7 +39,7 @@ set hlsearch
 
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 set foldmethod=syntax
 set foldlevelstart=10
@@ -173,9 +173,10 @@ nnoremap <silent> <space> :CtrlPBuffer<CR>
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.class,*.pyc
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(build|git|hg|svn)$',
+    \ 'dir':  '\v[\/](\.build|\.git|\.hg|\.svn|out|build|node_modules|target)$',
     \ 'file': '\v\.(class|pyc|exe|so|dll)$',
     \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
     \ }
+  let g:ctrlp_user_command = ['.git', 'cd %s ; git ls-files . -co --exclude-standard', 'find %s -type f']
 
 call pathogen#infect()
