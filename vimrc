@@ -138,24 +138,14 @@ else
 
 endif " has("autocmd")
 
+colorscheme desert
 if has("gui_running")
-    if has("win32")
-        set guifont=Consolas:h10:b:cANSI
-    else
-        "set guifont=Bitstream\ Vera\ Sans\ Mono\ Bold\ 9
-        set guifont=Menlo\ for\ Powerline\ 9
-    endif
+    set guifont=Menlo\ for\ Powerline\ 10
     set guioptions-=T
-    colorscheme desert
-else
-    colorscheme evening
 endif
 
 " function keys
 " =============
-
-" launch a build in guake
-noremap <silent> <F5> :exec "silent !./build.sh " . v:servername<CR>
 
 noremap <F6> :nohl<CR>
 
@@ -180,3 +170,5 @@ let g:ctrlp_custom_ignore = {
   let g:ctrlp_user_command = ['.git', 'cd %s ; git ls-files . -co --exclude-standard', 'find %s -type f']
 
 call pathogen#infect()
+
+autocmd BufNewFile,BufRead *.morpheme set syntax=scheme

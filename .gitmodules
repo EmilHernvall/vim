@@ -1,6 +1,3 @@
-[submodule "bundle/delimitMate"]
-	path = bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -16,12 +13,12 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "bundle/yankstack"]
 	path = bundle/yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
 [submodule "/home/emil/.vim/bundle/typescript-vim"]
 	path = /home/emil/.vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = git@github.com:w0rp/ale.git
