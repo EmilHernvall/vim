@@ -16,8 +16,8 @@
 [submodule "bundle/yankstack"]
 	path = bundle/yankstack
 	url = https://github.com/maxbrunsfeld/vim-yankstack.git
-[submodule "/home/emil/.vim/bundle/typescript-vim"]
-	path = /home/emil/.vim/bundle/typescript-vim
+[submodule "bundle/typescript-vim"]
+	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "bundle/ale"]
 	path = bundle/ale
